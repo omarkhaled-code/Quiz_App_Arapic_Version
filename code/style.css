@@ -1,0 +1,248 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --main-color: linear-gradient(0deg, #2c3c99, #00b0ff);
+    --second-color: #1772c9;
+
+}
+
+body {
+    font-family: Tahoma;
+}
+
+/* color : var(--main-color) */
+.quiz-app {
+    width: auto;
+    margin: 20px auto;
+    background-color: #f8f8f8;
+    padding: 20px;
+}
+
+.quiz-app .quiz-info {
+    display: flex;
+    justify-content: space-around;
+    background-color: #fff;
+    padding: 15px;
+    font-weight: bold;
+}
+
+.quiz-app .quiz-info span {
+    color: #777;
+}
+
+.quiz-app .quiz-area {
+    padding: 20px;
+    background-color: white;
+    margin: 20px auto;
+}
+
+.quiz-app .quiz-area h2 {
+    line-height: 1.5;
+}
+
+.quiz-app .answer-area {
+    background-color: white;
+    padding: 15px;
+    margin: 5px;
+}
+
+.quiz-app .answer-area .answer {
+    padding: 15px;
+}
+
+.quiz-app .answer-area .answer:not(:last-child) {
+    border-bottom: 1px solid #cdcdcd;
+}
+
+.quiz-app .answer-area .answer label {
+    cursor: pointer;
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+    margin-right: 25px;
+    position: relative;
+}
+
+.quiz-app .answer-area .answer input[type="radio"]:checked+label {
+    color: var(--second-color);
+}
+
+
+.quiz-app .answer-area .answer label::before {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid var(--second-color);
+    background: white;
+    right: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.quiz-app .answer-area .answer input[type="radio"]:checked+label::after,
+.quiz-app .answer-area .answer input[type="radio"]:not(:checked):hover+label::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--main-color);
+    right: -27px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.quiz-app .answer-area .answer input[type="radio"]:not(:checked):hover+label::after {
+    opacity: .3;
+}
+
+
+.quiz-app .submit-button {
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    background: var(--main-color);
+    cursor: pointer;
+    margin: 10px 10px 10px auto;
+}
+
+.quiz-app .submit-button:focus {
+    outline: none;
+}
+
+.quiz-app .bullets {
+    border-top: 1px solid #efecec;
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    margin: 10px;
+}
+
+
+.count-down {
+    font-weight: bold;
+    background: var(--main-color);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-right: auto;
+}
+
+.result {
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.quiz-app .result span {
+    font-weight: bold;
+}
+
+.quiz-app .result span.bad {
+    color: #dc0a0a;
+}
+
+.quiz-app .result span.good {
+    color: var(--second-color);
+}
+
+.quiz-app .result span.perfect {
+    color: #009688;
+}
+
+.from {
+    color: #777;
+}
+
+/* Reset Button  */
+
+.reset-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    background: var(--main-color);
+    cursor: pointer;
+    margin: 20px auto auto;
+}
+
+
+input[type="radio"] {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+
+
+@media (max-width:650px) {
+
+    .quiz-app .answer-area .answer label {
+        font-size: 13px;
+    }
+
+    .quiz-app .bullets .spans span {
+        width: 15px;
+        height: 15px;
+    }
+
+    .quiz-app .bullets {
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+
+    .result {
+        font-size: 18px;
+    }
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    padding: 25px;
+    margin: 20px;
+}
+
+button.button {
+    padding: 10px 15px;
+    color: white;
+    background: black;
+    font-size: 23px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 20px 0;
+    opacity: .5;
+    transition: .3s;
+}
+
+button.button.active {
+    opacity: 1;
+}
